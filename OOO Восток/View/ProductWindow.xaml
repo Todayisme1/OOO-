@@ -1,0 +1,95 @@
+﻿<Window x:Class="OOO_Восток.View.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOO_Восток.View"
+        mc:Ignorable="d"
+        Title="Редактирование каталога" Height="450" Width="800" Loaded="Window_Loaded" Icon="/Resurses/logo.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FFFFE8A1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="C:\Users\Sonia\Desktop\OOO Восток\OOO Восток\Resurses\logo.png" Width="80" Height="80"/>
+            <TextBlock Grid.Column="1" Text="Добавление нового товара"/>
+            <Button Grid.Column="2" x:Name="exit" Click="exit_Click" Margin="50 20" Background="#FFF1A85E">
+                <TextBlock Text="Выход" />
+            </Button>
+        </Grid>
+        <!--Функционал-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Поля товара-->
+                <UniformGrid Grid.Column="0" Columns="2" Rows="12">
+                    <Button Visibility="Hidden"/>
+                    <Button Visibility="Hidden"/>
+                    <TextBlock Text="Артикль"   HorizontalAlignment="Right" 
+                                     Margin="10 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbArt"   Margin="10 0"/>
+                    <TextBlock Text="Наименовние"   
+                                    HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbName"   Margin="10 0"/>
+                    <TextBlock Text="Производитель"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbManuf"   Margin="10 0"/>
+                    <!--<TextBlock Text="Поставщик"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbProv"   Margin="10 0"/>-->
+                    <TextBlock Text="Категория"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbCat"   Margin="10 0"/>
+                    <!--<TextBlock Text="Единицы изменения"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbUnit"   Margin="10 0"/>-->
+                    <TextBlock Text="Стоимость"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbCost"   Margin="10 0"/>
+                    <TextBlock Text="Мак.скидка"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbDisc"   Margin="10 0"/>
+                    <!--<TextBlock Text="Дейст.скидка"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbCurDisc"   Margin="10 0"/>
+                    <TextBlock Text="Количество"   
+                                     HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbCount"   Margin="10 0"/>-->
+                </UniformGrid>
+
+                <!--Поля описания и фото товара-->
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="imagePhoto" Grid.Row="0" Stretch="Uniform" Margin="20 10" Source="\Resurses\no.png"/>
+                    <Button x:Name="butSelectPhoto" Content="Выбрать фото ..." Grid.Row="1" 
+                                Margin="20 0" Click="butSelectPhoto_Click"/>
+                    <TextBlock Grid.Row="2" Text="Описание товара"  
+                                    HorizontalAlignment="Center" Margin="0 0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="tbDiscr" Grid.Row="3" Text="Текст описания товара" 
+                                   TextWrapping ="Wrap" AcceptsReturn ="True"
+                                AcceptsTab ="True" FontSize="12" VerticalScrollBarVisibility="Visible" 
+                                HorizontalScrollBarVisibility="Auto"/>
+                    <Button x:Name="butSaveInDB" Grid.Row="4" Content="Сохранить" 
+                                Margin="20 10" Click="butSaveInDB_Click"/>
+                </Grid>
+            </Grid>
+
+        </Grid>
+   
+</Window>
